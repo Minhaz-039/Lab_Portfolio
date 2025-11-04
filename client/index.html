@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <header class="p-6 text-center bg-blue-600 text-white">
+      <h1 class="text-3xl font-bold">My Portfolio</h1>
+    </header>
+
+    <section class="max-w-3xl mx-auto my-10 text-center">
+      <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
+
+      <form
+        id="contactForm"
+        class="flex flex-col gap-4 p-6 bg-white shadow rounded"
+      >
+        <input
+          type="text"
+          id="name"
+          placeholder="Your Name"
+          class="border p-2 rounded"
+          required
+        />
+        <input
+          type="email"
+          id="email"
+          placeholder="Your Email"
+          class="border p-2 rounded"
+          required
+        />
+        <textarea
+          id="message"
+          placeholder="Your Message"
+          class="border p-2 rounded"
+          rows="4"
+          required
+        ></textarea>
+        <button
+          type="submit"
+          class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+        >
+          Send Message
+        </button>
+        <p id="responseMessage" class="text-green-600 font-medium"></p>
+      </form>
+    </section>
+  </body>
+</html>
