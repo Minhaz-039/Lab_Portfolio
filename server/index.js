@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Contact form route
-app.post("/contact", (req, res) => {
+app.post("/api/contact", (req, res) => {
   const { name, email, message } = req.body;
 
   // Save to MySQL
@@ -31,11 +31,13 @@ app.post("/contact", (req, res) => {
     });
 
     const mailOptions = {
-      from: email,
-      to: process.env.EMAIL_USER,
-      subject: `New Message from ${name}`,
-      text: message,
-    };
+  from: process.env.EMAIL_USER, // your verified Gmail
+  to: process.env.EMAIL_USER,
+  replyTo: email,               // visitor email
+  subject: `New Message from ${name}`,
+  text: message,
+};
+
 
     transporter.sendMail(mailOptions, (error) => {
       if (error) {
